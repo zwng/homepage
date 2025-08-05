@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>荆州市抽象科技有限公司 - 专业软件定制开发服务</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- 备用CDN库 -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <!-- 简单二维码库 -->
+  </head>
+  <body>
+    <!-- 二维码悬浮按钮 -->
+    <div class="qr-float-button" id="qrButton">
+      <i class="fas fa-qrcode"></i>
+      <span>手机扫码</span>
+    </div>
+
+    <!-- 二维码弹窗 -->
+    <div class="qr-modal" id="qrModal">
+      <div class="qr-modal-content">
+        <div class="qr-modal-header">
+          <h3>手机扫码查看</h3>
+          <button class="qr-close-btn" id="qrCloseBtn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="qr-modal-body">
+          <div class="qr-code-container">
+            <canvas id="qrCode"></canvas>
+          </div>
+          <div class="qr-info">
+            <p>使用手机扫描二维码，在移动端获得更好的浏览体验</p>
+            <!-- <div class="qr-tips">
+              <div class="qr-tip">
+                <i class="fas fa-mobile-alt"></i>
+                <span>适配移动端</span>
+              </div>
+              <div class="qr-tip">
+                <i class="fas fa-touch"></i>
+                <span>触摸优化</span>
+              </div>
+              <div class="qr-tip">
+                <i class="fas fa-wifi"></i>
+                <span>快速加载</span>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <div class="logo-container">
+            <div class="logo-icon">
+              <img
+                src="images/logo-optimized.svg"
+                alt="抽象科技Logo"
+                width="40"
+                height="40"
+              />
+            </div>
+            <h2>抽象科技</h2>
+          </div>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#home">首页</a></li>
+          <li><a href="#services">服务方案</a></li>
+          <li><a href="#cases">成功案例</a></li>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#news">资讯中心</a></li>
+          <li><a href="#contact">合作咨询</a></li>
+        </ul>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 首页轮播 -->
+    <section id="home" class="hero-section">
+      <!-- 炫酷背景效果 -->
+      <div class="hero-bg-effects">
+        <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+        <div class="hero-glow-lines">
+          <div class="glow-line line-1"></div>
+          <div class="glow-line line-2"></div>
+          <div class="glow-line line-3"></div>
+        </div>
+        <div class="hero-light-spots">
+          <div class="light-spot spot-1"></div>
+          <div class="light-spot spot-2"></div>
+          <div class="light-spot spot-3"></div>
+        </div>
+      </div>
+
+      <div class="hero-slider">
+        <div class="slide active">
+          <div class="slide-content">
+            <h1>专业软件定制开发服务</h1>
+            <p>为企业提供一站式软件解决方案，助力数字化转型</p>
+            <a href="#contact" class="cta-button">立即咨询</a>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-content">
+            <h1>智能化业务系统</h1>
+            <p>基于AI技术的智能软件系统，提升企业运营效率</p>
+            <a href="#services" class="cta-button">了解更多</a>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-content">
+            <h1>全栈技术解决方案</h1>
+            <p>从前端到后端，从移动端到云端，全方位技术保障</p>
+            <a href="#cases" class="cta-button">查看案例</a>
+          </div>
+        </div>
+      </div>
+      <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+
+    <!-- 服务方案 -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>服务方案</h2>
+          <p>为企业提供全方位的软件定制开发服务</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>移动应用开发</h3>
+            <p>iOS、Android原生应用开发，跨平台解决方案，微信小程序定制开发</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Web系统开发</h3>
+            <p>企业管理系统、电商平台、门户网站、后台管理系统定制开发</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h3>云服务解决方案</h3>
+            <p>云端部署、微服务架构、容器化技术、DevOps自动化运维</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>AI智能应用</h3>
+            <p>机器学习、数据分析、智能推荐、自动化流程优化</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3>数据库设计</h3>
+            <p>数据库架构设计、性能优化、数据迁移、备份恢复方案</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>系统集成服务</h3>
+            <p>第三方系统集成、API接口开发、数据同步、业务流程整合</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 成功案例 -->
+    <section id="cases" class="cases-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>成功案例</h2>
+          <p>我们为众多企业提供了优质的软件解决方案</p>
+        </div>
+        <div class="cases-grid">
+          <div class="case-card">
+            <div class="case-image">
+              <img src="images/陪诊.webp" alt="陪诊服务平台" />
+            </div>
+            <div class="case-content">
+              <h3>陪诊服务平台</h3>
+              <p>
+                为用户提供专业的医疗陪诊预约、医生陪同、健康咨询等一站式服务，提升就医体验和效率。
+              </p>
+            </div>
+          </div>
+          <div class="case-card">
+            <div class="case-image">
+              <img src="images/商城.webp" alt="综合商城系统" />
+            </div>
+            <div class="case-content">
+              <h3>综合商城系统</h3>
+              <p>
+                集商品展示、在线下单、支付结算、订单管理于一体的综合电商平台，支持多种营销活动和物流跟踪。
+              </p>
+            </div>
+          </div>
+          <div class="case-card">
+            <div class="case-image">
+              <img src="images/家政.webp" alt="家政服务平台" class="center" />
+            </div>
+            <div class="case-content">
+              <h3>家政服务平台</h3>
+              <p>
+                为家庭用户提供保洁、月嫂、育儿、维修等多样化家政服务，支持在线预约与评价，保障服务质量。
+              </p>
+            </div>
+          </div>
+          <div class="case-card">
+            <div class="case-image">
+              <img
+                src="images/上门服务.webp"
+                alt="上门服务系统"
+                class="center"
+              />
+            </div>
+            <div class="case-content">
+              <h3>上门服务系统</h3>
+              <p>
+                为用户提供上门维修、家电清洗、搬家等便民服务，支持智能调度和服务进度实时跟踪。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>关于抽象科技</h2>
+            <p>
+              荆州市抽象科技有限公司是一家专注于软件定制开发的高新技术企业，致力于为企业提供专业的软件解决方案。
+            </p>
+            <p>
+              我们拥有经验丰富的技术团队，精通各种主流技术栈，能够为客户提供从需求分析、系统设计、开发实施到运维服务的全流程服务。
+            </p>
+            <div class="company-stats">
+              <div class="stat-item">
+                <h3>50+</h3>
+                <p>成功项目</p>
+              </div>
+              <div class="stat-item">
+                <h3>30+</h3>
+                <p>合作客户</p>
+              </div>
+              <div class="stat-item">
+                <h3>5年+</h3>
+                <p>行业经验</p>
+              </div>
+              <div class="stat-item">
+                <h3>24/7</h3>
+                <p>技术支持</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-image about-logo-bg">
+            <div class="about-logo-decor">
+              <img src="images/logo-optimized.svg" alt="抽象科技LOGO" />
+            </div>
+            <div class="about-slogan">
+              <span class="about-slogan-text"
+                >致力于打造一个世界级的技术研发平台</span
+              >
+              <span class="about-slogan-en"
+                >Aiming to build a world-class technology R&amp;D
+                platform.</span
+              >
+              <span class="about-slogan-keywords"
+                >创新 · 协作 · 专业 · 共赢</span
+              >
+            </div>
+            <svg
+              class="about-bg-svg"
+              width="320"
+              height="180"
+              viewBox="0 0 320 180"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="260"
+                cy="40"
+                r="36"
+                fill="#e0e7ff"
+                fill-opacity="0.5"
+              />
+              <circle
+                cx="60"
+                cy="140"
+                r="24"
+                fill="#e0e7ff"
+                fill-opacity="0.3"
+              />
+              <rect
+                x="120"
+                y="60"
+                width="80"
+                height="80"
+                rx="40"
+                fill="#f0f6ff"
+                fill-opacity="0.4"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 资讯中心 -->
+    <section id="news" class="news-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>资讯中心</h2>
+          <p>了解最新的技术动态和行业资讯</p>
+        </div>
+        <div class="news-grid">
+          <div class="news-card">
+            <div class="news-date">2024-03-15</div>
+            <h3>企业数字化转型的关键要素分析</h3>
+            <p>
+              探讨企业在数字化转型过程中需要注意的关键要素，以及如何选择合适的软件解决方案...
+            </p>
+          </div>
+          <div class="news-card">
+            <div class="news-date">2024-03-10</div>
+            <h3>微服务架构在企业应用中的实践</h3>
+            <p>
+              分享微服务架构在企业级应用开发中的实践经验，以及如何解决常见的架构问题...
+            </p>
+          </div>
+          <div class="news-card">
+            <div class="news-date">2024-03-05</div>
+            <h3>AI技术在软件开发中的应用前景</h3>
+            <p>
+              分析人工智能技术在软件开发领域的应用前景，以及如何将AI融入传统软件开发流程...
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 合作咨询 -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>联系我们</h2>
+          <p>期待与您的合作，共创美好未来</p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-grid">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h3>客服热线</h3>
+                <p class="contact-value">400-888-9999</p>
+                <p class="contact-desc">7×24小时专业服务</p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fab fa-weixin"></i>
+              </div>
+              <div class="contact-details">
+                <h3>微信咨询</h3>
+                <p class="contact-value">abstract-tech</p>
+                <p class="contact-desc">扫码添加微信</p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>公司地址</h3>
+                <p class="contact-value">湖北省荆州市沙市区北京中路123号</p>
+                <p class="contact-desc">欢迎实地考察</p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-details">
+                <h3>工作时间</h3>
+                <p class="contact-value">周一至周五 9:00-18:00</p>
+                <p class="contact-desc">节假日可预约</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>抽象科技</h3>
+            <p>
+              荆州市抽象科技有限公司专注于软件定制开发，为企业提供专业的软件解决方案，助力企业数字化转型。
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>服务方案</h3>
+            <ul>
+              <li><a href="#services">移动应用开发</a></li>
+              <li><a href="#services">Web系统开发</a></li>
+              <li><a href="#services">云服务解决方案</a></li>
+              <li><a href="#services">AI智能应用</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>快速链接</h3>
+            <ul>
+              <li><a href="#about">关于我们</a></li>
+              <li><a href="#cases">成功案例</a></li>
+              <li><a href="#news">资讯中心</a></li>
+              <li><a href="#contact">合作咨询</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>联系方式</h3>
+            <p>电话：400-888-9999</p>
+            <p>邮箱：contact@abstract-tech.com</p>
+            <p>地址：湖北省荆州市沙市区北京中路123号</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 荆州市抽象科技有限公司 版权所有 |
+            备案号：鄂ICP备2024000000号
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

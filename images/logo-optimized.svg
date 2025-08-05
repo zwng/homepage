@@ -1,0 +1,116 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- 抽象科技Logo - 大尺寸优化版本 -->
+  
+  <!-- 定义渐变 -->
+  <defs>
+    <!-- 主渐变 -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 阴影渐变 -->
+    <linearGradient id="shadowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f5f8b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c3e50;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 高光渐变 -->
+    <linearGradient id="highlightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5dade2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3498db;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 背景渐变 -->
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ecf0f1;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#bdc3c7;stop-opacity:0.15" />
+    </radialGradient>
+    
+    <!-- 外发光效果 -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景圆形 -->
+  <circle cx="60" cy="60" r="57" fill="url(#bgGradient)" stroke="#e9ecef" stroke-width="1.5"/>
+  
+  <!-- 主要几何图形 -->
+  <g>
+    <!-- 立方体前面 -->
+    <path d="M39 51 L60 39 L81 51 L60 63 Z" 
+          fill="url(#mainGradient)" 
+          stroke="#2980b9" 
+          stroke-width="1.5"/>
+    
+    <!-- 立方体侧面 -->
+    <path d="M39 51 L39 75 L60 87 L60 63 Z" 
+          fill="url(#shadowGradient)" 
+          stroke="#1f5f8b" 
+          stroke-width="1.5"/>
+    
+    <!-- 立方体顶面 -->
+    <path d="M81 51 L81 75 L60 87 L60 63 Z" 
+          fill="url(#highlightGradient)" 
+          stroke="#3498db" 
+          stroke-width="1.5"/>
+    
+    <!-- 连接线 - 垂直线 -->
+    <line x1="60" y1="39" x2="60" y2="87" 
+          stroke="#3498db" 
+          stroke-width="3.6" 
+          stroke-linecap="round"/>
+    
+    <!-- 连接线 - 水平线 -->
+    <line x1="39" y1="51" x2="81" y2="51" 
+          stroke="#3498db" 
+          stroke-width="3.6" 
+          stroke-linecap="round"/>
+    
+    <!-- 连接线 - 对角线 -->
+    <line x1="39" y1="51" x2="81" y2="75" 
+          stroke="#3498db" 
+          stroke-width="2.4" 
+          stroke-linecap="round" 
+          opacity="0.7"/>
+    
+    <line x1="81" y1="51" x2="39" y2="75" 
+          stroke="#3498db" 
+          stroke-width="2.4" 
+          stroke-linecap="round" 
+          opacity="0.7"/>
+  </g>
+  
+  <!-- 抽象元素 - 中心点 -->
+  <circle cx="60" cy="63" r="4.5" fill="#e74c3c" stroke="#c0392b" stroke-width="0.9"/>
+  
+  <!-- 抽象元素 - 装饰点 -->
+  <circle cx="48" cy="57" r="2.4" fill="#f39c12" stroke="#e67e22" stroke-width="0.6"/>
+  <circle cx="72" cy="57" r="2.4" fill="#f39c12" stroke="#e67e22" stroke-width="0.6"/>
+  <circle cx="54" cy="69" r="1.8" fill="#9b59b6" stroke="#8e44ad" stroke-width="0.6"/>
+  <circle cx="66" cy="69" r="1.8" fill="#9b59b6" stroke="#8e44ad" stroke-width="0.6"/>
+  
+  <!-- 高光效果 -->
+  <circle cx="48" cy="48" r="1.5" fill="#ffffff" opacity="0.9"/>
+  <circle cx="72" cy="48" r="1.5" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- 外框装饰 -->
+  <circle cx="60" cy="60" r="58.5" 
+          fill="none" 
+          stroke="#3498db" 
+          stroke-width="0.9" 
+          opacity="0.4"/>
+  
+  <!-- 外发光效果 -->
+  <circle cx="60" cy="60" r="57" 
+          fill="none" 
+          stroke="#3498db" 
+          stroke-width="2" 
+          opacity="0.2"
+          filter="url(#glow)"/>
+</svg> 
