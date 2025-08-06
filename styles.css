@@ -1164,7 +1164,9 @@ body {
 }
 
 /* ===== 卡片3D浮起发光 ===== */
-.case-card {
+.case-card:not(.fade-in-scroll):not(.fade-left):not(.fade-right):not(
+    .fade-scale
+  ) {
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s;
   box-shadow: 0 2px 16px rgba(52, 152, 219, 0.06);
 }
@@ -1213,10 +1215,18 @@ body {
     transform: none;
   }
 }
-.section-header,
-.case-card,
-.about-image,
-.stat-item {
+.section-header:not(.fade-in-scroll):not(.fade-left):not(.fade-right):not(
+    .fade-scale
+  ),
+.case-card:not(.fade-in-scroll):not(.fade-left):not(.fade-right):not(
+    .fade-scale
+  ),
+.about-image:not(.fade-in-scroll):not(.fade-left):not(.fade-right):not(
+    .fade-scale
+  ),
+.stat-item:not(.fade-in-scroll):not(.fade-left):not(.fade-right):not(
+    .fade-scale
+  ) {
   animation: fadeInUp 1s cubic-bezier(0.25, 0.8, 0.25, 1) both;
 }
 
@@ -1820,5 +1830,119 @@ body {
 
   .cta-content p {
     font-size: 1rem;
+  }
+}
+
+/* 滚动淡入效果 */
+.fade-in-scroll {
+  opacity: 0 !important;
+  transform: translateY(50px) !important;
+  transition: opacity 0.8s ease, transform 0.8s ease !important;
+}
+
+.fade-in-scroll.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 不同方向的淡入效果 */
+.fade-left {
+  opacity: 0 !important;
+  transform: translateX(-50px) !important;
+  transition: opacity 0.8s ease, transform 0.8s ease !important;
+}
+
+.fade-left.visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.fade-right {
+  opacity: 0 !important;
+  transform: translateX(50px) !important;
+  transition: opacity 0.8s ease, transform 0.8s ease !important;
+}
+
+.fade-right.visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.fade-scale {
+  opacity: 0 !important;
+  transform: scale(0.8) !important;
+  transition: opacity 0.8s ease, transform 0.8s ease !important;
+}
+
+.fade-scale.visible {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* 延迟效果 */
+.fade-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.fade-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.fade-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.fade-delay-4 {
+  transition-delay: 0.4s;
+}
+
+.fade-delay-5 {
+  transition-delay: 0.5s;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .fade-in-scroll,
+  .fade-left,
+  .fade-right,
+  .fade-scale {
+    transition-duration: 0.6s;
+    transform: translateY(30px);
+  }
+
+  .fade-left {
+    transform: translateX(-30px);
+  }
+
+  .fade-right {
+    transform: translateX(30px);
+  }
+
+  .fade-delay-1 {
+    transition-delay: 0.05s;
+  }
+  .fade-delay-2 {
+    transition-delay: 0.1s;
+  }
+  .fade-delay-3 {
+    transition-delay: 0.15s;
+  }
+  .fade-delay-4 {
+    transition-delay: 0.2s;
+  }
+  .fade-delay-5 {
+    transition-delay: 0.25s;
+  }
+}
+
+/* 减少动画偏好设置 */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-scroll,
+  .fade-left,
+  .fade-right,
+  .fade-scale {
+    transition: none;
+    opacity: 1;
+    transform: none;
   }
 }

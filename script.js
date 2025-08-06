@@ -110,24 +110,51 @@ if (document.querySelector('.hero-slider')) {
 
 // 滚动动画
 function animateOnScroll() {
-    const elements = document.querySelectorAll('.service-card, .case-card, .news-card, .stat-item');
+    // 选择所有需要淡入效果的元素
+    const fadeElements = document.querySelectorAll(
+        '.fade-in-scroll, .fade-left, .fade-right, .fade-scale, ' +
+        '.service-card:not(.fade-in-scroll):not(.fade-left):not(.fade-right):not(.fade-scale), ' +
+        '.case-card:not(.fade-in-scroll):not(.fade-left):not(.fade-right):not(.fade-scale), ' +
+        '.news-card:not(.fade-in-scroll):not(.fade-left):not(.fade-right):not(.fade-scale), ' +
+        '.stat-item:not(.fade-in-scroll):not(.fade-left):not(.fade-right):not(.fade-scale)'
+    );
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                const element = entry.target;
+
+                // 检查元素是否有淡入类，如果有则添加visible类
+                if (element.classList.contains('fade-in-scroll') ||
+                    element.classList.contains('fade-left') ||
+                    element.classList.contains('fade-right') ||
+                    element.classList.contains('fade-scale')) {
+                    element.classList.add('visible');
+                } else {
+                    // 对于没有淡入类的元素，使用原来的方式
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+
+                // 可选：一次性动画，动画完成后停止观察
+                // observer.unobserve(element);
             }
         });
     }, {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -100px 0px'
     });
 
-    elements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    // 为没有淡入类的元素设置初始样式
+    fadeElements.forEach(element => {
+        if (!element.classList.contains('fade-in-scroll') &&
+            !element.classList.contains('fade-left') &&
+            !element.classList.contains('fade-right') &&
+            !element.classList.contains('fade-scale')) {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        }
         observer.observe(element);
     });
 }
