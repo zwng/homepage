@@ -589,7 +589,7 @@ function initQRCode() {
     }
 
     // 初始化分享功能
-    addShareFeature();
+    // addShareFeature();
 }
 
 // 初始化二维码功能
