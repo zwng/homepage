@@ -9,51 +9,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <!-- 备用CDN库 -->
-    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
-    <!-- 简单二维码库 -->
   </head>
   <body>
-    <!-- 二维码悬浮按钮 -->
-    <div class="qr-float-button" id="qrButton">
-      <i class="fas fa-qrcode"></i>
-      <span>手机扫码</span>
-    </div>
-
-    <!-- 二维码弹窗 -->
-    <div class="qr-modal" id="qrModal">
-      <div class="qr-modal-content">
-        <div class="qr-modal-header">
-          <h3>手机扫码查看</h3>
-          <button class="qr-close-btn" id="qrCloseBtn">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="qr-modal-body">
-          <div class="qr-code-container">
-            <canvas id="qrCode"></canvas>
-          </div>
-          <div class="qr-info">
-            <p>使用手机扫描二维码，在移动端获得更好的浏览体验</p>
-            <!-- <div class="qr-tips">
-              <div class="qr-tip">
-                <i class="fas fa-mobile-alt"></i>
-                <span>适配移动端</span>
-              </div>
-              <div class="qr-tip">
-                <i class="fas fa-touch"></i>
-                <span>触摸优化</span>
-              </div>
-              <div class="qr-tip">
-                <i class="fas fa-wifi"></i>
-                <span>快速加载</span>
-              </div>
-            </div> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- 导航栏 -->
     <nav class="navbar">
       <div class="nav-container">
